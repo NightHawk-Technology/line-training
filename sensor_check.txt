@@ -1,0 +1,11 @@
+#include <ipst.h>
+
+void setup() {
+  OK();
+  glcdClear();
+}
+
+void loop() {
+  glcd(0,0, "L: %d", in(26));
+  glcd(1,0, "R: %d", in(28));
+}

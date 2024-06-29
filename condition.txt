@@ -9,10 +9,10 @@ void setup(){
 void loop(){
     l = in(26);
     r = in(28);
-    if(l < 700){
+    if(l == 0){
         sl(50);
     }
-    else if(r < 700){
+    else if(r == 0){
         sr(50);
     }
     else{
