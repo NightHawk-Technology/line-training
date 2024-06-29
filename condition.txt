@@ -1,0 +1,21 @@
+#include <ipst.h>
+
+int l,r;
+
+void setup(){
+    OK();
+}
+
+void loop(){
+    l = in(26);
+    r = in(28);
+    if(l < 700){
+        sl(50);
+    }
+    else if(r < 700){
+        sr(50);
+    }
+    else{
+        fd(50);
+    }
+}
