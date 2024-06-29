@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
     <pre style="font-size: xx-large;">
         fd(Speed); // คำสั่งเดินหน้า
@@ -13,9 +15,47 @@
         tl(Speed); // คำสั่งเลี้ยวซ้ายล้อเดียว
         tr(Speed); // คำสั่งเลี้ยวขวาล้อเดียว
         ao(); // คำสั่งหยุด
-    </pre><hr><br><br><br>
+    </pre>
+    <hr><br><br>
 
-    <li><a href="sensor_check.txt">การอ่านค่าเซ็นเซอร์</a></li>
-    <li><a href="condition.txt">การใช้เงื่อนไข</a></li>
+    <h3>การอ่านค่าเซ็นเซอร์</h3>
+    <pre style="background-color: rgb(46, 46, 46); color: white; padding-top: 50px; padding-bottom: 50px; font-size: large;">
+        #include <ipst.h>
+        void setup() {
+            OK();
+            glcdClear();
+        }
+                    
+        void loop() {
+            glcd(0,0, "L: %d", in(26));
+            glcd(1,0, "R: %d", in(28));
+        }
+            
+    </pre>
+    <hr><br>
+    <h3>การใช้เงื่อนไขควบคุมหุ่นยนต์</h3>
+    <pre style="background-color: rgb(46, 46, 46); color: white; padding-top: 50px; padding-bottom: 50px; font-size: large;">
+        #include <ipst.h>
+        int l,r;
+
+        void setup(){
+            OK();
+        }
+                    
+        void loop(){
+            l = in(26);
+            r = in(28);
+            if(l == 1){
+                sl(50);
+            }
+            else if(r == 1){
+                sr(50);
+            }
+            else{
+                fd(50);
+            }
+        }            
+    </pre><hr>
 </body>
+
 </html>
