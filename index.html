@@ -46,6 +46,24 @@
             else if(r == 1){ sr(50); }
             else{ fd(50); }
         }
+    </textarea><hr><br>
+    <textarea readonly rows="13" cols="50" style="background-color: rgb(46, 46, 46); color: white; padding-top: 50px; padding-bottom: 50px; font-size: large;">
+        #include <ipst.h>
+        int l,r,lo,ro;
+        void setup() {
+            OK();
+        }
+        void loop(){
+            l = in(26);
+            r = in(28);
+            lo = in(25);
+            ro = in(29);
+            if(lo == 1) {fd2(30,100);}
+            else if(l == 1){ fd2(60, 100); }
+            else if(r == 1){ fd2(100, 60); }
+            else if(ro == 1) {fd2(100,30);}
+            else{ fd(100); }
+        }
     </textarea>
 </body>
 
